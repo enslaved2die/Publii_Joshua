@@ -1,0 +1,138 @@
+// Forms ----------------------------------------------------------------- 
+
+fieldset {
+	border: 1px solid $color-input-border;
+	border-radius: 6px;
+	margin: 0 0 baseline(6);
+	padding: baseline(6);
+	&>legend {
+		margin-left: -1rem;
+		padding: 0 1rem;
+	}
+}
+
+legend {
+	font-weight: $font-weight-bold;
+}
+
+label {
+	font-weight: $font-weight-bold;
+	margin: 0 baseline(4) baseline(3) 0;
+}
+
+option {
+	font-weight: $font-weight-normal;
+}
+
+[type=text],
+[type=url],
+[type=tel],
+[type=number],
+[type=email],
+[type=search],
+textarea,
+select {
+	background-color: $color-input-bg;
+	border: 1px solid $color-input-border;
+	border-radius: 50px;
+	font-size: 1rem;
+	outline: none;
+	padding: baseline(2) baseline(3);
+	width: 100%;
+	transition: all 0.24s ease-out;
+	@include mappy-bp(sm) {
+		width: auto
+	}
+	@include appearance-none;
+	&:focus {
+		box-shadow:inset 0 0 2px $color;
+	}
+}
+
+input[type=checkbox],
+input[type=radio] {
+    opacity: 0;
+    position: absolute;
+
+    & + label {
+        position: relative;
+        margin-left: -1px;
+        cursor: pointer;
+        padding: 0;
+
+        &:before {
+            background-color: $color-input-bg;
+            border: 1px solid $color-input-border;
+            border-radius: 2px;
+            content: '';
+            display: inline-block;
+            height: baseline(5);
+            line-height: baseline(5);
+            margin-right: baseline(4);
+            vertical-align: middle;
+            text-align: center;
+            width: baseline(5); 
+        }
+    }
+    &:checked + label:before {
+        content: "";
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 8'%3e%3cpolygon points='9.53 0 4.4 5.09 1.47 2.18 0 3.64 2.93 6.54 4.4 8 5.87 6.54 11 1.46 9.53 0' fill='%233949ab'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-size: 11px 8px;
+        background-position: 50% 50%;
+    }
+}
+
+input[type=radio] {
+    & + label {
+        &:before {
+            border-radius: 50%;
+        }
+    }
+    &:checked + label:before {
+       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3ccircle cx='4' cy='4' r='4' fill='%233949ab'/%3e%3c/svg%3e");
+    }
+}
+
+[type=file] {
+	margin-bottom: baseline(6);
+	width: 100%;
+}
+
+select {
+	max-width: 100%;
+	width: auto;
+	position: relative;
+	&:not([multiple]) {
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><polygon points="3 6 3 6 0 0 6 0 3 6" fill="%238a8b8c"/></svg>') no-repeat 90% 50%;
+		background-size: 8px;
+		padding-right: baseline(12);
+	}
+}
+
+select[multiple] {
+	border-radius: 6px;
+	padding: baseline(6);
+	width: 100%;
+	&:hover {
+		border-color: $color-input-border;
+	}
+	&:focus {
+		border-color: $color-input-border-focus;
+	}
+	&:disabled {
+		background-color: $color-button-disabled-bg;
+		cursor: not-allowed;
+		&:hover {
+			border-color: $color-input-border;
+		}
+	}
+}
+
+textarea {
+	border-radius: 6px;
+	display: block;
+	overflow: auto;
+	resize: vertical;
+	max-width: 100%;
+}

@@ -1,0 +1,120 @@
+{{> head}}
+
+<main class="main main--grid {{#checkIfNone @config.custom.sidebar}}main--full{{/checkIfNone}}">
+    {{!-- "isFirstPage" global variable is used here; with this when pagination is displayed the second and following pages of posts are displayed without a hero and featured post section. --}}
+    {{#if @renderer.isFirstPage}}
+    {{#checkIfAny @config.custom.uploadHero @config.custom.textHero}}
+    <div class="hero">
+        {{#if @config.custom.uploadHero}}
+        <img src="{{@config.custom.uploadHero}}" {{!--{{responsiveSrcSet @config.custom.uploadHero}} {{responsiveSizes}}--}} alt="{{@config.custom.uploadHeroAlt}}" {{#if @config.custom.uploadHeroTitle}} title="{{@config.custom.uploadHeroTitle}}" {{/if}} class="hero__image">
+        {{/if}}
+        {{!--
+        {{#if @config.custom.textHero}}
+        <div class="hero__text">
+            {{{@config.custom.textHero}}}
+        </div>
+        {{/if}}
+        --}}
+    </div>{{!-- .hero --}}
+    {{/checkIfAny}}
+    {{#if @config.custom.welcome}}
+    {{#checkIfAny @config.custom.welcomeImage @config.custom.welcome}}
+    <div class="welcome__headline">
+        {{{@config.custom.welcomeHeadline}}}
+    </div>
+    <div class="welcome__image" alt="{{@config.custom.uploadHeroAlt}}" {{#if @config.custom.welcomeImageAlt}} title="{{@config.custom.welcomeImageTitle}}" {{/if}}>
+        <img src="{{@config.custom.welcomeImage}}" {{responsiveSrcSet @config.custom.welcomeImage}} {{responsiveSizes}}>
+    </div>
+    <div class="welcome__text">
+        {{{@config.custom.welcomeTitle}}}
+    </div>
+    <div class="welcome__spacer">
+    </div>
+    {{/checkIfAny}}
+    {{/if}}
+    {{#if featuredPosts}}
+    {{!--<div class="featured-posts">
+        <h3 class="box__title">Featured posts</h3>--}}
+        {{#each featuredPosts}}
+        {{#checkIf @index '<' 100}} {{!-- With this we can specify how many featured posts are displayed. --}} <article class="article">
+            {{#featuredImage}}
+            {{#if url}}
+            <a href="{{../url}}" class="card__image">
+                <img src="{{url}}" sizes="{{sizes.listing}}" srcset="{{srcset.listing}}" alt="{{alt}}">
+            </a>
+            {{/if}}
+            {{/featuredImage}}
+            <header>
+                <h2 class="article__title">
+                    <a href="{{url}}">{{title}}</a>
+                </h2>
+            </header>
+            {{#if excerpt}}
+            <p>{{{excerpt}}}</p>
+            {{/if}}
+            {{!--<p class="article__meta u-small">
+                <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                    {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                    {{date createdAt @config.custom.formatDate}}
+                    {{else}}
+                    {{date createdAt @config.custom.formatDateCustom}}
+                    {{/checkIf}}
+                </time>
+            </p>--}}
+            </article>
+            {{/checkIf}}
+            {{/each}}
+            {{!--
+    </div>{{!-- .featured-posts --}}
+    {{/if}}
+    {{/if}}
+    {{!--
+    {{#each posts}}
+    <article class="article">
+        {{#featuredImage}}
+        {{#if url}}
+        <a href="{{../url}}" class="card__image">
+            <img src="{{url}}" sizes="{{sizes.listing}}" srcset="{{srcset.listing}}" alt="{{alt}}">
+        </a>
+        {{/if}}
+        {{/featuredImage}}
+
+        <header>
+            <h2 class="article__title">
+                <a href="{{url}}">{{title}}</a>
+            </h2>
+            {{#if hasCustomExcerpt}}
+            {{{ excerpt }}}
+            {{else}}
+            <p>{{{ excerpt }}}</p>
+            {{/if}}
+            <p class="article__meta u-small">
+                {{#author}}
+                <a href="{{url}}" title="{{name}}">
+                    {{#if avatar}}
+                    <img src="{{avatar}}" class="article__meta__avatar" alt="{{name}}">
+                    {{/if}}
+                    {{name}}
+                </a>
+                {{/author}}
+                <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                    {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                    {{date createdAt @config.custom.formatDate}}
+                    {{else}}
+                    {{date createdAt @config.custom.formatDateCustom}}
+                    {{/checkIf}}
+                </time>
+            </p>
+        </header>
+    </article>
+    {{/each}}
+    --}}
+
+    {{> pagination}}
+</main>
+
+{{#if @config.custom.sidebar}}
+{{> sidebar}}
+{{/if}}
+
+{{> footer}}
