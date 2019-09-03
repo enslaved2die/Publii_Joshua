@@ -367,6 +367,8 @@ sup {
 .main--grid,
 .main--author {
     display: grid;
+    grid-gap: 4em;
+    margin: 2em;
 }
 
 .main--author {
@@ -441,11 +443,11 @@ sup {
     }
 }
 
-@media only screen and (min-width: 80em) {
+@media only screen and (min-width: 90em) {
 
     .main--grid,
     .main--author {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(8, 1fr);
     }
 
     .main--grid > article {
@@ -506,7 +508,6 @@ sup {
 }
 
 .article {
-    overflow: hidden;
     width: 100%;
     padding-top: 100%;
     /* 1:1 Aspect Ratio */
@@ -521,34 +522,46 @@ sup {
     object-fit: cover;
     position: absolute;
     top: 0;
+    border-radius: 2rem;
+}
+
+.article .img-blurred{
+  -webkit-filter: blur(1rem); /* Safari 6.0 - 9.0 */
+  filter: blur(1rem);
+  transform: translate(0,.2em) scale(1.05);
+  opacity: .6;
 }
 
 .overlay {
+  display: flex;
     width: 100%;
     height: 100%;
     background: black;
     position: absolute;
     top: 0;
     opacity: 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-transform: uppercase;
-    -webkit-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    -o-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -webkit-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    -o-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*,  font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    border-radius: 2rem;
 }
 
 .overlay h1 {
+    display: flex;
     color: white;
     position: relative;
-    top: calc(50% - 2rem);
     width: auto;
     text-align: center;
+    align-items: center;
     font-size: inherit;
+    margin: auto;
 }
 
 .overlay:hover {
     opacity: 0.8;
-    font-size: 2em;
+    /* font-size: 2em; */
 }
 
 /*Header*/
@@ -737,3 +750,21 @@ nav a span {
 .pagination a {
     background-color: inherit;
 }
+
+/* @media (prefers-color-scheme: dark)
+{
+  body{
+    background: #2D3133;
+    color: #FCFCFC;
+  }
+
+  .article .img-blurred{
+    -webkit-filter: none;
+    filter: none;
+    transform: none;
+    opacity: 1;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+} */

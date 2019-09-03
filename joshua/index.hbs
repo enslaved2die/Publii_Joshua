@@ -2,11 +2,12 @@
 <main class="main--grid">
     {{#if featuredPosts}}
         {{#each featuredPosts}}
-            {{#checkIf @index '<' 3}}
+            {{#checkIf @index '<' 8}}
                 <article class="article">
                     {{#featuredImage}}
                         {{#if url}}
-                            <img src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt=" {{alt}}">
+                            <img class="img-blurred" src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt=" {{alt}}" loading="lazy">
+                            <img src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt=" {{alt}}" loading="lazy">
                             <a href=" {{../url}}" class="overlay">
                         {{/if}}
                     {{/featuredImage}}
@@ -16,7 +17,7 @@
             {{/checkIf}}
         {{/each}}
     {{/if}}
-    {{#each posts}}
+    <!-- {{#each posts}}
         <article class="article">
             {{#featuredImage}}
                 {{#if url}}
@@ -27,7 +28,7 @@
             <h1>{{title}}</h1>
             </a>
         </article>
-    {{/each}}
+    {{/each}} -->
 </main>
-{{> pagination}}
+<!-- {{> pagination}} -->
 {{> footer}}
