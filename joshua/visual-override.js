@@ -112,6 +112,14 @@ var generateOverride = function (params) {
                color: ${params.linkHoverColor};
                fill: ${params.linkHoverColor};
         }
+        .active a{
+              color: ${params.linkHoverColor};
+              fill: ${params.linkHoverColor};
+        }
+        .active .active__icon{
+              color: ${params.linkHoverColor};
+              fill: ${params.linkHoverColor};
+        }
         .post__entry a {
                color: ${params.linkHoverColor};
                fill: ${params.linkHoverColor};
@@ -119,6 +127,10 @@ var generateOverride = function (params) {
         .post__nav__link:hover h5 {
                color: ${params.linkHoverColor};
                fill: ${params.linkHoverColor};
+        }
+        .u-icon:hover{
+              color: ${params.linkHoverColor};
+              fill: ${params.linkHoverColor};
         }`;
     }
 
@@ -129,6 +141,11 @@ var generateOverride = function (params) {
         [type=submit],
         button {
                background: ${params.primaryColor};
+        }
+
+        .welcome__text a{
+               color: ${params.primaryColor};
+               fill: ${params.primaryColor};
         }
 
         [type=text]:focus,
@@ -166,6 +183,9 @@ var generateOverride = function (params) {
         .cookie-popup,
         .cookie-popup__save {
                background: ${params.primaryColor};
+        }
+        hr.article__spacer{
+          background: ${params.primaryColor};
         }`;
     }
 

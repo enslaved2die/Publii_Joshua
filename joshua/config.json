@@ -3,7 +3,8 @@
     "version": "1.0.1.0",
     "author": "Joshua Sellke <http://www.sellke.net/>",
     "menus": {
-        "mainMenu": "Main menu"
+        "mainMenu": "Main menu",
+        "tagMenu": "Tag menu"
     },
     "renderer": {
         "relatedPostsNumber": 3,
@@ -25,7 +26,7 @@
         "alternative": "1 column layout"
     },
     "tagTemplates": {
-        "alternative": "1 column layout"
+        "alternative": "Tagpage with Sub Menu"
     },
     "config": [
         {
@@ -206,7 +207,7 @@
             "name": "escapeMenu",
             "group": "Menu",
             "note": "Show or hide something like &lt;span&gt; in Menu",
-            "label": "Escape Charakters in Menu",
+            "label": "Escape Characters in Menu",
             "value": false,
             "type": "checkbox"
         },
@@ -216,6 +217,82 @@
             "group": "Hero",
             "value": "I'm a simple person, with simple dreams.",
             "type": "wysiwyg"
+        },
+        {
+            "name": "welcome",
+            "label": "Welcome",
+            "group": "Welcome",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "welcomeImage",
+            "label": "Image",
+            "group": "Welcome",
+            "value": "",
+            "type": "upload",
+            "upload": true,
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "welcomeImageAlt",
+            "label": "Image Alt text",
+            "group": "Welcome",
+            "placeholder": "Please add an alternative text to the hero image",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "welcomeImageTitle",
+            "label": "Image Title",
+            "group": "Welcome",
+            "placeholder": "Please add a title to the hero image",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Welcome",
+            "size": "small",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "welcomeHeadline",
+            "label": "Welcome Headline",
+            "group": "Welcome",
+            "value": "Welcome to my site!",
+            "type": "wysiwyg",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "welcomeTitle",
+            "label": "Welcome Title",
+            "group": "Welcome",
+            "value": "Lorem Ipsum dolor sit amet",
+            "type": "wysiwyg",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
         },
         {
             "name": "shareFacebook",
@@ -325,6 +402,18 @@
             "label": "LinkedIn",
             "group": "Menu",
             "placeholder": "Please enter your LinkedIn URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialXing",
+            "label": "Xing",
+            "group": "Menu",
+            "placeholder": "Please enter your Xing URL",
             "value": "",
             "type": "text",
             "dependencies": [{
