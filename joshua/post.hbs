@@ -62,7 +62,7 @@
                 {{#featuredImage}}
                     {{#if url}}
                         <figure>
-                            <img src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="{{alt}}">
+                            <img src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="{{alt}}" loading="lazy">
                             {{#checkIfAny caption credits}}
                                 <figcaption>
                                     {{caption}}

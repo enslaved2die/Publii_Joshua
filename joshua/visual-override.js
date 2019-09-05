@@ -5,6 +5,13 @@
 var generateOverride = function (params) {
     let output = '';
 
+    if (params.containerMaxWidth !== '1920') {
+        output += `
+        .container {
+               max-width: ${params.containerMaxWidth}px;
+        }`;
+    }
+
     if (params.minFontSize !== '1' || params.maxFontSize !== '1.3') {
         output += `
         html {
@@ -186,6 +193,9 @@ var generateOverride = function (params) {
         }
         hr.article__spacer{
           background: ${params.primaryColor};
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: ${params.primaryColor};
         }`;
     }
 
@@ -221,10 +231,31 @@ var generateOverride = function (params) {
         }`;
     }
 
-    if (params.textHeroColor !== '#ffffff') {
+    if (params.textHeroColor !== '#BBB') {
         output += `
-        .hero__text {
+        .hero{
                color: ${params.textHeroColor};
+        }`;
+    }
+
+    if (params.textHeroShadow !== '#DDD') {
+        output += `
+        .hero{
+               color: text-shadow: 0 2px 2px ${params.textHeroShadow};
+        }`;
+    }
+
+    if (params.strongTextHeroColor !== '#751aff') {
+        output += `
+        .hero strong{
+               color: ${params.strongTextHeroColor};
+        }`;
+    }
+
+    if (params.strongTextHeroShadow !== '#cdb8ff') {
+        output += `
+        .hero strong{
+               color: text-shadow: 0 2px 2px ${params.strongTextHeroShadow};
         }`;
     }
 

@@ -63,11 +63,11 @@
     ],
     "customConfig": [
         {
-            "name": "postTitleOffset",
-            "label": "Post Title position offset",
+            "name": "containerMaxWidth",
+            "label": "Max Content width",
             "group": "Layout",
-            "note": "Offset value in rem",
-            "value": "2",
+            "note": "max-width value in px",
+            "value": "1920",
             "type": "text"
         },
         {
@@ -219,6 +219,34 @@
             "type": "wysiwyg"
         },
         {
+            "name": "textHeroColor",
+            "label": "Text color",
+            "group": "Hero",
+            "value": "#BBB",
+            "type": "colorpicker"
+        },
+        {
+            "name": "textHeroShadow",
+            "label": "Text Shadow",
+            "group": "Hero",
+            "value": "#DDD",
+            "type": "colorpicker"
+        },
+        {
+            "name": "strongTextHeroColor",
+            "label": "Strong text color",
+            "group": "Hero",
+            "value": "#751aff",
+            "type": "colorpicker"
+        },
+        {
+            "name": "strongTextHeroShadow",
+            "label": "Strong text Shadow",
+            "group": "Hero",
+            "value": "#cdb8ff",
+            "type": "colorpicker"
+        },
+        {
             "name": "welcome",
             "label": "Welcome",
             "group": "Welcome",
@@ -288,6 +316,17 @@
             "label": "Welcome Title",
             "group": "Welcome",
             "value": "Lorem Ipsum dolor sit amet",
+            "type": "wysiwyg",
+            "dependencies": [{
+                "field": "welcome",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "welcomeFeautured",
+            "label": "Welcome Feautured",
+            "group": "Welcome",
+            "value": "My proudest projects",
             "type": "wysiwyg",
             "dependencies": [{
                 "field": "welcome",

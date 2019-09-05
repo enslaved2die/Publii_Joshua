@@ -17,8 +17,10 @@
     </div>
   </div>
   {{/checkIfAny}}
+  {{#checkIfAny @config.custom.welcomeFeautured}}
+  <div class="welcome__feautured">{{{@config.custom.welcomeFeautured}}}</div>
+  {{/checkIfAny}}
   {{/if}}
-
     {{#if featuredPosts}}
         {{#each featuredPosts}}
             {{#checkIf @index '<' 8}}
