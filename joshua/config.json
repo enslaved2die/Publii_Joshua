@@ -914,7 +914,7 @@
                         "crop": true
                     },
                     "sm": {
-                        "width": 480,
+                        "width": 600,
                         "height": "auto"
                     },
                     "md": {
@@ -937,7 +937,7 @@
                         "group": "post,listing,amp"
                     },
                     "sm": {
-                        "width": 480,
+                        "width": 600,
                         "height": "auto",
                         "group": "post,listing,amp"
                     },
@@ -962,7 +962,7 @@
                         "crop": true
                     },
                     "sm": {
-                        "width": 480,
+                        "width": 600,
                         "height": "auto"
                     },
                     "md": {
