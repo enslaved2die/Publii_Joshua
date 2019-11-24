@@ -1,6 +1,6 @@
 {
     "name": "Joshua",
-    "version": "1.0.1.0",
+    "version": "1.0.1.1",
     "author": "Joshua Sellke <http://www.sellke.net/>",
     "menus": {
         "mainMenu": "Main menu",
@@ -27,6 +27,10 @@
     },
     "tagTemplates": {
         "alternative": "Tagpage with Sub Menu"
+    },
+    "extensions": {
+        "postEditorConfigOverride": true,
+        "postEditorCustomScript": true
     },
     "config": [
         {

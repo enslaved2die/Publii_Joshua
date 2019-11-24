@@ -8,7 +8,7 @@ It has been modified to fit my personal taste.
 Inside Publii the theme is still called "Starter", so don't be confused.
 This will be changed in future updates.
 
-![Theme Preview Screenshot](ThemePreview.jpg)
+![Theme Preview Screenshot](ThemePreview.png)
 
 ### Author
 Joshua Sellke [http://www.sellke.net/](http://www.sellke.net/)
