@@ -8,6 +8,11 @@
     text-decoration: none;
 }
 
+:root {
+    --border-radius: 0.8rem;
+    --linkHoverColor: #3949ab;
+}
+
 /*WEBKIT THEMING*/
 
 ::-webkit-scrollbar {
@@ -115,18 +120,18 @@ a {
 }
 
 a:hover {
-    color: #751aff;
-    fill: #751aff;
+    color: var(--linkHoverColor);
+    fill: var(--linkHoverColor);
 }
 
 a:active {
-    color: #751aff;
-    fill: #751aff;
+    color: var(--linkHoverColor);
+    fill: var(--linkHoverColor);
 }
 
 a:focus {
-    color: #751aff;
-    fill: #751aff;
+    color: var(--linkHoverColor);
+    fill: var(--linkHoverColor);
 }
 
 p,
@@ -587,14 +592,14 @@ sup {
     object-fit: cover;
     position: absolute;
     top: 0;
-    border-radius: 2rem;
+    border-radius: var(--border-radius);
 }
 
 .article .img-blurred{
-  -webkit-filter: blur(1.2rem); /* Safari 6.0 - 9.0 */
-  filter: blur(1.2rem);
-  transform: translate(0,.2em) scale(1.02);
-  opacity: .8;
+  -webkit-filter: blur(1.5rem) brightness(0.92) saturate(1.8); /* Safari 6.0 - 9.0 */
+  filter: blur(1.5rem) brightness(0.92) saturate(1.8);
+  /*transform: translate(0,.2em) scale(1.02);
+  opacity: .8;*/
 }
 
 .overlay {
@@ -606,11 +611,12 @@ sup {
     top: 0;
     opacity: 0;
     font-size: 1.5em;
+    padding: 0.8rem;
     text-transform: uppercase;
-    -webkit-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
-    -o-transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
-    transition: opacity .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*,  font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
-    border-radius: 2rem;
+    -webkit-transition: opacity .2s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    -o-transition: opacity .2s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*, font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    transition: opacity .2s cubic-bezier(0.25, 0.46, 0.45, 0.94)/*,  font-size 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) */;
+    border-radius: var(--border-radius);
 }
 
 .overlay h1 {
@@ -626,7 +632,6 @@ sup {
 
 .overlay:hover {
     opacity: 0.8;
-    /* font-size: 2em; */
 }
 
 /*Header*/
@@ -652,7 +657,6 @@ sup {
 @media only screen and (min-width: 20em) {
     .navbar {
         margin-left: 3rem;
-        width: 5rem;
     }
 
     .logo {
@@ -666,7 +670,6 @@ sup {
 
     .menu__social {
         margin: 3rem 0;
-        width: 5rem;
     }
 }
 
@@ -812,7 +815,7 @@ nav a span {
 }
 .welcome__image{
   grid-column: span 2;
-  border-radius: 2rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 

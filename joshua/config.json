@@ -1,6 +1,6 @@
 {
     "name": "Joshua",
-    "version": "1.0.1.1",
+    "version": "2.0.0.0",
     "author": "Joshua Sellke <http://www.sellke.net/>",
     "menus": {
         "mainMenu": "Main menu",
@@ -21,6 +21,15 @@
             "beforePost": "Before every post",
             "afterPost": "After every post"
         }
+    },
+    "supportedFeatures": {
+        "authorImages": true,
+        "authorPages": true,
+        "blockEditor": true,
+        "errorPage": true,
+        "embedConsents": true,
+        "tagPages": true,
+        "tagsList": true
     },
     "authorTemplates": {
         "alternative": "1 column layout"
@@ -421,6 +430,18 @@
             "label": "Twitter",
             "group": "Menu",
             "placeholder": "Please enter your Twitter URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialMastadon",
+            "label": "Mastadon",
+            "group": "Menu",
+            "placeholder": "Please enter your Mastadon URL",
             "value": "",
             "type": "text",
             "dependencies": [{
