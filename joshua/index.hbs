@@ -7,8 +7,8 @@
     <div class="welcome__headline">
         {{{@config.custom.welcomeHeadline}}}
     </div>
-    <div class="welcome__image" alt="{{@config.custom.uploadHeroAlt}}" {{#if @config.custom.welcomeImageAlt}} title="{{@config.custom.welcomeImageTitle}}" {{/if}}>
-        <img src="{{@config.custom.welcomeImage}}" {{responsiveSrcSet @config.custom.welcomeImage}} {{responsiveSizes}} loading="lazy">
+    <div class="welcome__image">
+        <img src="{{@config.custom.welcomeImage}}" {{responsiveSrcSet @config.custom.welcomeImage}} {{responsiveSizes}}  alt="{{@config.custom.welcomeImageAlt}}" title="{{@config.custom.welcomeImageTitle}}">
     </div>
     <div class="welcome__text">
         {{{@config.custom.welcomeTitle}}}

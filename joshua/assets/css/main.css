@@ -420,7 +420,7 @@ sup {
 
     .main--full,
     .main--author {
-        margin: 2rem 3rem;
+        margin: 2rem;
     }
 
     .newest{
@@ -867,6 +867,21 @@ nav a span {
 
 .post__footer {
     font-size: 0.8em;
+}
+
+.post__iframe iframe
+{
+    border-radius: var(--border-radius);
+}
+
+header img, .page-header img, .post__image img
+{
+    border-radius: var(--border-radius);
+}
+
+.badge img
+{
+    border-radius: 0;
 }
 
 /*Pagination*/

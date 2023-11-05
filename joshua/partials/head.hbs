@@ -39,8 +39,12 @@
             <link rel="next" href="{{@pagination.nextPageUrl }}">
         {{/if}}
     {{/if}}
+    {{!-- <link rel="preload" href="{{css "style.css" }}" as="style" onload="this.onload=null;this.rel='stylesheet'"> --}}
     <link rel="stylesheet" href="{{css "style.css" }}">
-    <link rel="stylesheet" href="{{font @config.custom.headlineFont}}:{{@config.custom.headlineFontWeight}}|{{@config.custom.textFont}}:{{@config.custom.textFontWeight}}, {{@config.custom.heroFontWeight}}" />
+    <style>
+        @import url("https://fonts.googleapis.com/css?family={{@config.custom.headlineFont}}:{{@config.custom.headlineFontWeight}}&display=swap");
+        @import url("https://fonts.googleapis.com/css?family={{@config.custom.textFont}}:{{@config.custom.textFontWeight}},{{@config.custom.heroFontWeight}}&display=swap");
+    </style>
     {{jsonLD}}
     {{!-- Insert some custom code by Custom HTML tool --}}
     {{{@headCustomCode}}}
@@ -53,7 +57,7 @@
         <header class="top">
             <a class="logo" href="{{@website.url}}">
                 {{#if @website.logo}}
-                    <img src="{{@website.logo}}" alt="{{@website.name}}">
+                    <img src="{{@website.logo}}" alt="{{@website.name}} Logo">
                 {{else}}
                     {{@website.name}}
                 {{/if}}

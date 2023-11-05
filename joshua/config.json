@@ -379,13 +379,6 @@
             "type": "checkbox"
         },
         {
-            "name": "shareStumbleupon",
-            "group": "Share Buttons",
-            "label": "StumbleUpon share button",
-            "value": true,
-            "type": "checkbox"
-        },
-        {
             "name": "shareLinkedin",
             "group": "Share Buttons",
             "label": "LinkedIn share button",
@@ -538,6 +531,18 @@
             "label": "Patreon",
             "group": "Menu",
             "placeholder": "Please enter your Patreon URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialGithub",
+            "label": "Github",
+            "group": "Menu",
+            "placeholder": "Please enter your Github URL",
             "value": "",
             "type": "text",
             "dependencies": [{
