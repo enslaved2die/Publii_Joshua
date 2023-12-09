@@ -539,7 +539,6 @@ sup {
 }
 
 .footer {
-    border-top: 1px solid #e3e3e3;
     padding: -webkit-calc(1.86667rem + 0.5vw) 0;
     padding: calc(1.86667rem + 0.5vw) 0;
     text-align: center;
@@ -595,9 +594,10 @@ sup {
     border-radius: var(--border-radius);
 }
 
-.article .img-blurred{
+.img-blurred{
   -webkit-filter: blur(1.5rem) brightness(0.92) saturate(1.8); /* Safari 6.0 - 9.0 */
   filter: blur(1.5rem) brightness(0.92) saturate(1.8);
+  z-index: -100;
   /*transform: translate(0,.2em) scale(1.02);
   opacity: .8;*/
 }
@@ -791,7 +791,7 @@ nav a span {
 
 .hero strong {
     color: #751aff;
-    text-shadow: 0 2px 2px #cdb8ff;
+    text-shadow: 0 2px 2px #ccf0ff;
     font-size: inherit;
     font-weight: inherit;
     font-kerning: inherit;
@@ -907,20 +907,49 @@ header img, .page-header img, .post__image img
     background-color: inherit;
 }
 
-/* @media (prefers-color-scheme: dark)
+@media (prefers-color-scheme: dark)
 {
   body{
-    background: #2D3133;
-    color: #FCFCFC;
+    background-color: #040404;
+    color: #DDD!important;
   }
 
-  .article .img-blurred{
-    -webkit-filter: none;
-    filter: none;
-    transform: none;
-    opacity: 1;
-    -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #DDD!important;
   }
-} */
+
+  a, .u-icon {
+    color: #DDD!important;
+    fill: #DDD!important;
+}
+
+.navbar__menu li a, .navbar__menu li span {
+    color: #DDD!important;
+}
+
+a:active, a:focus, a:hover, .u-icon:hover{
+    color: #009ee3!important;
+    fill: #009EE3!important;
+}
+
+.welcome__text a {
+    color: #009ee3!important;
+    fill: #009EE3!important;
+}
+
+.img-blurred{
+    -webkit-filter: blur(8rem) brightness(1) saturate(1.8); /* Safari 6.0 - 9.0 */
+    filter: blur(8rem) brightness(1) saturate(1.8);
+    /*transform: translate(0,.2em) scale(1.02);
+    opacity: .8;*/
+}
+.logo img{
+    filter: brightness(1000);
+}
+
+}
