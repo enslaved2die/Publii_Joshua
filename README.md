@@ -12,6 +12,6 @@ Dark Mode
 ### Author
 Joshua Sellke [http://www.sellke.net/](http://www.sellke.net/)
 
-### Licence
+### License
 
 MIT
