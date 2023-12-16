@@ -62,6 +62,7 @@
                 {{#featuredImage}}
                     {{#if url}}
                         <figure>
+                            <img class="img-blurred" src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="{{alt}}" loading="lazy">
                             <img src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="{{alt}}" loading="lazy">
                             {{#checkIfAny caption credits}}
                                 <figcaption>

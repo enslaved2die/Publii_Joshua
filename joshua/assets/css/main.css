@@ -38,6 +38,7 @@ hgroup,
 nav,
 section {
     display: block;
+    position: relative;
 }
 
 li {
@@ -598,6 +599,7 @@ sup {
   -webkit-filter: blur(1.5rem) brightness(0.92) saturate(1.8); /* Safari 6.0 - 9.0 */
   filter: blur(1.5rem) brightness(0.92) saturate(1.8);
   z-index: -100;
+  position: absolute;
   /*transform: translate(0,.2em) scale(1.02);
   opacity: .8;*/
 }
@@ -722,11 +724,6 @@ ul.navbar__menu {
 
 ul.navbar__menu > li {
     padding: 0.7rem 0 0 0;
-}
-
-hr.article__spacer {
-    background: #751AFF;
-    height: 0.2rem;
 }
 
 
@@ -945,11 +942,10 @@ a:active, a:focus, a:hover, .u-icon:hover{
 .img-blurred{
     -webkit-filter: blur(8rem) brightness(1) saturate(1.8); /* Safari 6.0 - 9.0 */
     filter: blur(8rem) brightness(1) saturate(1.8);
-    /*transform: translate(0,.2em) scale(1.02);
-    opacity: .8;*/
+    mix-blend-mode: plus-lighter;
 }
 .logo img{
-    filter: brightness(1000);
+    filter: grayscale(1) invert(1);
 }
 
 }

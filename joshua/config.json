@@ -225,6 +225,14 @@
             "type": "checkbox"
         },
         {
+            "name": "heroEnabled",
+            "group": "Hero",
+            "note": "Show the Hero Text",
+            "label": "Enable Hero Text",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
             "name": "heroText",
             "label": "Hero text",
             "group": "Hero",

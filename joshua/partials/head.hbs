@@ -63,11 +63,13 @@
                 {{/if}}
             </a>
             {{> menu menus.mainMenu}}
-            {{#if @config.custom.heroText}}
-                <div class="hero">
-                    <div class="hero--text">
-                        {{{@config.custom.heroText}}}
+            {{#if @config.custom.heroEnabled}}
+                {{#if @config.custom.heroText}}
+                    <div class="hero">
+                        <div class="hero--text">
+                            {{{@config.custom.heroText}}}
+                        </div>
                     </div>
-                </div>
+                {{/if}}
             {{/if}}
         </header>

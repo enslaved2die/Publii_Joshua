@@ -191,9 +191,6 @@ var generateOverride = function (params) {
         .cookie-popup__save {
                background: ${params.primaryColor};
         }
-        hr.article__spacer{
-          background: ${params.primaryColor};
-        }
         ::-webkit-scrollbar-thumb {
             background-color: ${params.primaryColor};
         }`;
