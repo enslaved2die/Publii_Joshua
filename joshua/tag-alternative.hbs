@@ -27,7 +27,7 @@
             {{/featuredImage}} -->
             {{#featuredImage}}
                 {{#if url}}
-                    <img class="img-blurred" src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt=" {{alt}}" loading="lazy">
+                    <img role="presentation" class="img-blurred" src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt="" loading="lazy">
                     <img src="{{url}}" {{#if @config.custom.responsiveImages}} sizes="{{sizes.listing}}" srcset=" {{srcset.listing}}" {{/if}} alt=" {{alt}}" loading="lazy">
                 {{/if}}
             {{/featuredImage}}
