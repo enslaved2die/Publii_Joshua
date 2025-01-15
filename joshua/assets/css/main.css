@@ -621,6 +621,16 @@ sup {
     border-radius: var(--border-radius);
 }
 
+
+@media (prefers-reduced-motion) {
+    .overlay {
+          -webkit-transition: none;
+          -o-transition: none;
+          transition: none;
+      }
+}
+
+
 .overlay h1 {
     display: flex;
     color: white;
