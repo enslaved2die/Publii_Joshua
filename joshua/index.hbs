@@ -23,7 +23,6 @@
   {{/if}}
     {{#if featuredPosts}}
         {{#each featuredPosts}}
-            {{#checkIf @index '<' 8}}
                 <article class="article">
                     {{#featuredImage}}
                         {{#if url}}
@@ -35,7 +34,6 @@
                     <h1>{{title}}</h1>
                     </a>
                 </article>
-            {{/checkIf}}
         {{/each}}
     {{/if}}
     <!-- {{#each posts}}

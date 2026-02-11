@@ -1,0 +1,56 @@
+{{> head}}
+
+<hr class="article__spacer">
+<main class="main--full">
+    {{#if @customHTML.beforePost}}
+        <div class="banner banner--before-post">
+            {{@customHTML.beforePost }}
+        </div>
+    {{/if}}
+
+    {{#page}}
+        <article class="post"> {{!-- Keeping 'post' class for CSS consistency --}}
+            <header>
+                <h1>{{title}}</h1>
+
+                {{#featuredImage}}
+                    {{#if url}}
+                        <figure role="none">
+                            <img role="presentation" class="img-blurred" src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="" loading="lazy">
+                            <img src="{{url}}" sizes="{{sizes.post}}" srcset="{{srcset.post}}" alt="{{alt}}" loading="lazy">
+                            {{#checkIfAny caption credits}}
+                                <figcaption>
+                                    {{caption}}
+                                    {{credits}}
+                                </figcaption>
+                            {{/checkIfAny}}
+                        </figure>
+                    {{/if}}
+                {{/featuredImage}}
+            </header>
+
+            <div class="post__entry">
+                {{{text}}}
+            </div>
+
+            {{#if @config.page.displayLastUpdatedDate}}
+                {{#if modifiedAt}}
+                    <footer class="post__footer">
+                        <p class="post__last-updated">
+                            {{ translate 'post.lastUpdatedDate' }}
+                            {{date modifiedAt @config.custom.formatDate}}
+                        </p>
+                    </footer>
+                {{/if}}
+            {{/if}}
+        </article>
+    {{/page}}
+
+    {{#if @customHTML.afterPost}}
+        <div class="banner banner--after-post">
+            {{@customHTML.afterPost}}
+        </div>
+    {{/if}}
+</main>
+
+{{> footer}}

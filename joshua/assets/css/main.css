@@ -876,7 +876,7 @@ nav a span {
     font-size: 0.8em;
 }
 
-.post__iframe iframe
+.post__iframe iframe, video
 {
     border-radius: var(--border-radius);
 }
@@ -884,6 +884,12 @@ nav a span {
 header img, .page-header img, .post__image img
 {
     border-radius: var(--border-radius);
+}
+
+.image-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Space between images and the text below */
 }
 
 .badge img

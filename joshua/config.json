@@ -1,12 +1,13 @@
 {
     "name": "Joshua",
-    "version": "2.1.1.0",
+    "version": "3.0.0.0",
     "author": "Joshua Sellke <http://www.sellke.net/>",
     "menus": {
         "mainMenu": "Main menu",
         "tagMenu": "Tag menu"
     },
     "renderer": {
+        "featuredPostsNumber": 500,
         "relatedPostsNumber": 3,
         "renderRelatedPosts": true,
         "renderSimilarPosts": false,
@@ -19,7 +20,9 @@
         "create404page": true,
         "customHTML": {
             "beforePost": "Before every post",
-            "afterPost": "After every post"
+            "afterPost": "After every post",
+            "beforePage": "Before every page",
+            "afterPage": "After every post"
         }
     },
     "supportedFeatures": {
@@ -29,7 +32,8 @@
         "errorPage": true,
         "embedConsents": true,
         "tagPages": true,
-        "tagsList": true
+        "tagsList": true,
+        "pages": true
     },
     "authorTemplates": {
         "alternative": "1 column layout"
@@ -840,6 +844,105 @@
         }
     ],
     "postConfig": [
+        {
+            "name": "displayCategoryName",
+            "label": "Display category name",
+            "note": "Display the name of the first tag from all assigned to the post.",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayAuthor",
+            "label": "Display author name",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayDate",
+            "label": "Display date",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayLastUpdatedDate",
+            "label": "Display last updated date",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayShareButtons",
+            "label": "Display share buttons",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayTags",
+            "label": "Display tags",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        }
+    ],
+    "pageConfig": [
         {
             "name": "displayCategoryName",
             "label": "Display category name",
