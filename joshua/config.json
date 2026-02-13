@@ -1,6 +1,6 @@
 {
     "name": "Joshua",
-    "version": "3.0.0.0",
+    "version": "3.1.0.0",
     "author": "Joshua Sellke <http://www.sellke.net/>",
     "menus": {
         "mainMenu": "Main menu",
@@ -289,6 +289,14 @@
                 "field": "welcome",
                 "value": "true"
             }]
+        },
+        {
+            "name": "welcome_image_ratio",
+            "label": "Aspect Ratio",
+            "group": "Welcome",
+            "value": "3/2",
+            "type": "text",
+            "help": "e.g., 16/9, 4/3, or 1/1"
         },
         {
             "name": "welcomeImageAlt",

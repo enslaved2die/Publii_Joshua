@@ -44,6 +44,9 @@
     <style>
         @import url("https://fonts.googleapis.com/css?family={{@config.custom.headlineFont}}:{{@config.custom.headlineFontWeight}}&display=swap");
         @import url("https://fonts.googleapis.com/css?family={{@config.custom.textFont}}:{{@config.custom.textFontWeight}},{{@config.custom.heroFontWeight}}&display=swap");
+        :root {
+                --welcome-ratio: {{#if @config.custom.welcome_image_ratio}}{{@config.custom.welcome_image_ratio}}{{else}}1/1{{/if}};
+            }
     </style>
     {{jsonLD}}
     {{!-- Insert some custom code by Custom HTML tool --}}

@@ -13,6 +13,7 @@
     --linkHoverColor: #3949ab;
 }
 
+
 /*WEBKIT THEMING*/
 
 ::-webkit-scrollbar {
@@ -824,6 +825,7 @@ nav a span {
   grid-column: span 2;
   border-radius: var(--border-radius);
   overflow: hidden;
+  aspect-ratio: var(--welcome-ratio);
 }
 
 .welcome__text h1,
